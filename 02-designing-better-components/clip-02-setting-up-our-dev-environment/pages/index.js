@@ -1,5 +1,7 @@
+import App from '../src/components/App';
+
 const IndexPage = () => {
-  return <div>Hello From Pluralsight!</div>;
+  return <App />;
 };
 
 export default IndexPage;
