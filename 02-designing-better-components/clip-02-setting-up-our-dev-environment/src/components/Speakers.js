@@ -1,23 +1,14 @@
-import { useState } from "react";
-
 import SpeakersList from "./SpeakersList";
 import SpeakersToolbar from "./SpeakersToolbar";
+import { SpeakerFilterProvider } from "../contexts/SpeakerFilterContext";
 
-function Speakers({ theme, setTheme }) {
-    const [showSessions, setShowSessions] = useState(true);
-
+function Speakers() {
+    
     return (   // return fragment vs div
-        <>
-            <SpeakersToolbar 
-                theme={theme} 
-                setTheme={setTheme} 
-                showSessions={showSessions}
-                setShowSessions={setShowSessions}
-            />
-            <SpeakersList 
-                showSessions={showSessions}
-            />
-        </>
+        <SpeakerFilterProvider startingShowSessions={false}>
+            <SpeakersToolbar />
+            <SpeakersList />
+        </SpeakerFilterProvider>
     )
 }
 
